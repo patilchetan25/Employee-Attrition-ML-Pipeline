@@ -25,41 +25,61 @@ python run_pipeline.py           # preprocess + train + evaluate
 # Optional: streamlit run app.py
 ```
 
-## Project Structure
+## 📁 Project Structure
 
-configs/          YAML config (paths/params)
-data/             raw/processed (gitignored)
-figures/          evaluation plots
-models/           saved model + metrics (gitignored)
-notebooks/        EDA
-reports/          metrics, model_card.md, executive_summary.md/pdf
-src/              pipeline code (prep, train, eval, utils)
-run_pipeline.py   one-command runner
-app.py            Streamlit app
-.github/workflows/ci.yml  CI workflow
+```text
+configs/                  YAML configuration files (paths, parameters)
+data/                     Raw and processed datasets (gitignored)
+figures/                  Evaluation plots (ROC, PR curves)
+models/                   Trained models and metrics (gitignored)
+notebooks/                Exploratory Data Analysis (EDA)
+reports/                  Metrics, model card, executive summary (PDF/MD)
+src/                      Pipeline code (preprocessing, training, evaluation, utils)
+run_pipeline.py           One-command end-to-end pipeline runner
+app.py                    Streamlit web application
+.github/workflows/ci.yml  Continuous Integration (CI) workflow
+```
 
-## Key Drivers (from model importance)
-Low satisfaction + high monthly hours and multiple projects
-Longer tenure without recent promotion
-Lower salary bands; department effects are smaller
+---
 
-# Recommendations
-Use high-recall mode as an early-warning system; route flagged employees to manager review.
-Rebalance workload for high-hour / low-satisfaction staff; monitor burnout signals.
-Audit promotion pathways for long-tenured employees; increase transparency.
-Track fairness: monitor precision/recall by department and salary band; retrain quarterly.
-Keep the model advisory only—human-in-the-loop for decisions.
+## 🔍 Key Drivers of Attrition
 
-Artifacts
+*(Derived from model feature importance)*
 
-Metrics: metrics.json
-Model card: model_card.md
-Executive summary: executive_summary.md (export to PDF for sharing)
-Plots: roc_curve.png, pr_curve.png
+* Low job satisfaction combined with **high monthly working hours** and **multiple active projects**
+* **Long tenure without recent promotion**
+* **Lower salary bands**
+  *(Department-level effects were comparatively smaller)*
 
-License
-MIT License (see LICENSE).
+---
 
-Credits
-Dataset: HR Analytics (~15K employees, target left).
-Author: Chetz (patilchetan25)
+## 🧠 Recommendations
+
+* Use the **high-recall model mode** as an early-warning system and route flagged employees for **manager review**
+* Rebalance workload for employees with **high hours and low satisfaction**; actively monitor burnout indicators
+* Audit and improve **promotion pathways** for long-tenured employees to increase transparency
+* Track **fairness metrics** (precision and recall) across departments and salary bands; **retrain quarterly**
+* Keep the model **advisory only** with a **human-in-the-loop** for all decisions
+
+---
+
+## 📦 Artifacts
+
+* **Metrics:** `metrics.json`
+* **Model Card:** `model_card.md`
+* **Executive Summary:** `executive_summary.md` (exportable to PDF)
+* **Plots:** `roc_curve.png`, `pr_curve.png`
+
+---
+
+## 📜 License
+
+MIT License — see `LICENSE` for details.
+
+---
+
+## 🙌 Credits
+
+* **Dataset:** HR Analytics (~15,000 employees, target variable: *attrition*)
+* **Author:** Chetz ([@patilchetan25](https://github.com/patilchetan25))
+
