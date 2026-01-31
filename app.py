@@ -4,9 +4,19 @@ import numpy as np
 import streamlit as st
 from pathlib import Path
 
+MODEL_PATH = Path("models/model.joblib")
+PREP_PATH = Path("data/processed/preprocessor.joblib")
+
 if not MODEL_PATH.exists() or not PREP_PATH.exists():
     st.error("Model artifacts not found. Run `python run_pipeline.py` and commit model.joblib + preprocessor.joblib.")
     st.stop()
+
+@st.cache_resource
+def load_artifacts():
+    model = joblib.load(MODEL_PATH)
+    preprocessor = joblib.load(PREP_PATH)
+    feature_names = preprocessor.get_feature_names_out()
+    return model, preprocessor, feature_names
 
 
 st.title("Employee Attrition Risk")
