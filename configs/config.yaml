@@ -1,0 +1,14 @@
+dataset:
+  kagglehub_id: "mfaisalqureshi/hr-analytics-and-job-prediction"
+  target_col: "left"
+
+paths:
+  raw_dir: "data/raw"
+  processed_dir: "data/processed"
+  model_dir: "models"
+  figures_dir: "figures"
+  reports_dir: "reports"
+
+training:
+  test_size: 0.2
+  random_state: 42
