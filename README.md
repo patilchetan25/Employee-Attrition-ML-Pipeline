@@ -23,6 +23,7 @@ source .venv/bin/activate        # on Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 python run_pipeline.py           # preprocess + train + evaluate
 # Optional: streamlit run app.py
+```
 
 ## Project Structure
 
