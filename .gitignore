@@ -6,8 +6,8 @@ venv/
 
 .ipynb_checkpoints/
 
-data/raw/*
-data/processed/*
+!models/model.joblib
+!data/processed/preprocessor.joblib
 models/*
 figures/*
 

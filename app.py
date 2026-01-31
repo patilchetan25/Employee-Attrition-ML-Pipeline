@@ -4,6 +4,11 @@ import numpy as np
 import streamlit as st
 from pathlib import Path
 
+if not MODEL_PATH.exists() or not PREP_PATH.exists():
+    st.error("Model artifacts not found. Run `python run_pipeline.py` and commit model.joblib + preprocessor.joblib.")
+    st.stop()
+
+
 st.title("Employee Attrition Risk")
 st.write("Predict attrition risk and view top drivers.")
 

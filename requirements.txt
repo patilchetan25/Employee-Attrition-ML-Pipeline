@@ -8,4 +8,5 @@ pyyaml
 kagglehub
 jupyter
 streamlit
-altair>=4.2.2,<5
+streamlit>=1.28,<2
+
